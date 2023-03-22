@@ -717,17 +717,17 @@ bool WiFiComponent::wifi_ap_ip_config_(optional<ManualIP> manual_ip) {
   }
 
   // lease time 1440 minutes (=24 hours)
-  if (!wifi_softap_set_dhcps_lease_time(1440)) {
-    ESP_LOGV(TAG, "Setting SoftAP DHCP lease time failed!");
-    return false;
-  }
+  //if (!wifi_softap_set_dhcps_lease_time(1440)) {
+  //  ESP_LOGV(TAG, "Setting SoftAP DHCP lease time failed!");
+  //  return false;
+  //}
 
   uint8_t mode = 1;
   // bit0, 1 enables router information from ESP8266 SoftAP DHCP server.
-  if (!wifi_softap_set_dhcps_offer_option(OFFER_ROUTER, &mode)) {
-    ESP_LOGV(TAG, "wifi_softap_set_dhcps_offer_option failed!");
-    return false;
-  }
+  //if (!wifi_softap_set_dhcps_offer_option(OFFER_ROUTER, &mode)) {
+  //  ESP_LOGV(TAG, "wifi_softap_set_dhcps_offer_option failed!");
+  //  return false;
+  //}
 
   if (!wifi_softap_dhcps_start()) {
     ESP_LOGV(TAG, "Starting SoftAP DHCPS failed!");
